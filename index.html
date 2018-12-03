@@ -2,29 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>vue 入门</title>
+  <title>属性绑定和双向数据绑定</title>
   <script src="./vue.js"></script>
 </head>
 <body>
   <div id="root">
-    <div v-on:click="handleClick">{{content}}</div>
-    <!-- html是不转义 text是转义 -->
+    <div v-bind:title="title">hello world</div>
   </div>
   <script>
     new Vue({
       el: "#root",
       data: {
-        content: "hello"
-      },
-      methods: {
-        handleClick: function(){
-          this.content = "world"
-        }
+        title: "this is hello world"
       }
     })
-
-    // var dom = docoment.getElementById("root")
-    // dom.innerHTML = "hello world"
   </script>
 </body>
 </html>
