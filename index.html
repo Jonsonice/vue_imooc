@@ -2,40 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>计算属性与侦听器</title>
+  <title>if show for</title>
   <script src="./vue.js"></script>
 </head>
 <body>
   <div id="root">
-    姓：<input v-model = "firstName" />
-    名：<input v-model = "lastName" />
-    <!-- <div>{{firstName}}{{lastName}}</div> -->
-    <div>{{fullName}}</div>
-    <div>{{count}}</div>
+    <div v-if="show">hello world</div>
+    <div v-show="show">hello world</div>
+    <!-- v-show不用销毁dom再创建dom -->
+    <button @click="handleClick">toggle</button>
   </div>
   <script>
     new Vue({
       el: "#root",
       data: {
-        firstName: '',
-        lastName: '',
-        count: '0'
+        show: true
       },
-      computed: {
-        fullName: function(){
-          return this.firstName + '' +this.lastName
+      methods: {
+        handleClick: function() {
+          this.show = !this.show;
         }
-      },
-      watch: {
-        // firstName: function(){
-        //   this.count++
-        // },
-        // lastName: function(){
-        //   this.count++
-        // }
-        fullName: function(){
-          this.count++
-        },
       }
     })
   </script>
