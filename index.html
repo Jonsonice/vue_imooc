@@ -7,16 +7,19 @@
 </head>
 <body>
   <div id="root">
-    <div v-if="show">hello world</div>
     <div v-show="show">hello world</div>
-    <!-- v-show不用销毁dom再创建dom -->
     <button @click="handleClick">toggle</button>
+    <ul>
+      <li v-for="(item,index) of list" :key="index">{{item}}</li>
+      <!-- key值要求不用 -->
+    </ul>
   </div>
   <script>
     new Vue({
       el: "#root",
       data: {
-        show: true
+        show: true,
+        list:[1,2,3]
       },
       methods: {
         handleClick: function() {
