@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>vue 入门</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="root">{{msg}}</div>
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        msg: "hello world"
+      }
+    })
+
+    // var dom = docoment.getElementById("root")
+    // dom.innerHTML = "hello world"
+  </script>
+</body>
+</html>
