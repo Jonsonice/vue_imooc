@@ -8,12 +8,16 @@
 <body>
   <div id="root">
     <div v-bind:title="title">hello world</div>
+    <input :value="content"/>
+    <input v-model="content"/>
+    <div>{{content}}</div>
   </div>
   <script>
     new Vue({
       el: "#root",
       data: {
-        title: "this is hello world"
+        title: "this is hello world",
+        content: "this is content"
       }
     })
   </script>
