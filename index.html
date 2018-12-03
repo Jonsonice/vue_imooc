@@ -6,10 +6,11 @@
   <script src="./vue.js"></script>
 </head>
 <body>
-  <div id="root">{{msg}}</div>
+  <div id="root"></div>
   <script>
     new Vue({
       el: "#root",
+      template:"<h1>hello {{msg}}</h1>",
       data: {
         msg: "hello world"
       }
